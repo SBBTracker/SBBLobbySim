@@ -40,6 +40,3 @@ class LobbyPlayer:
             open_board_slot = next((i for i, char in self.characters.keys() if char is None), False)
             if open_board_slot:
                 self.characters[open_board_slot] = char
-            elif
-
-    def

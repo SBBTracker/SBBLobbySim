@@ -16,6 +16,6 @@ if __name__ == '__main__':
     for player in players:
         player.select_hero(random.choice(hero_options))
 
-    while sum(player.alive for player in player) > 1:
-
-        shop_gen =
+    # while sum(player.alive for player in player) > 1:
+    #
+    #     shop_gen =

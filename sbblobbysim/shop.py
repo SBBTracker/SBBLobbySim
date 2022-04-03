@@ -31,12 +31,17 @@ class ShopOffer:
     spells: list
 
 
-class LobbyShop():
+class LobbyShop:
     def __init__(self):
-        self.character_pool = {
-            char_id: CHARACTER_POOL_PER_LEVEL[char.level] for char_id, char in character_registry
-        }
+        self.character_pool = {}
         self.round = 1
+
+        for char_id, char in character_registry.characters.items():
+            try:
+                amount = CHARACTER_POOL_PER_LEVEL[char.level]
+            except:
+                amount = 0
+            self.character_pool[char_id] = amount
 
     def generate_offers(self, spells, level) -> ShopOffer:
         char_options = character_registry.filter(_lambda=lambda c: c.level <= level)
